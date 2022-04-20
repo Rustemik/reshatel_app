@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:reshatel_app/styles/styles.dart';
 
@@ -11,11 +13,13 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  bool _answer = false;
+  Random _rng = Random();
 
   void _incrementCounter() {
+    var value = _rng.nextBool();
     setState(() {
-      _counter++;
+      _answer = value;
     });
   }
 
@@ -31,12 +35,12 @@ class _MyHomePageState extends State<MyHomePage> {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(10),
             child: Container(
-              decoration: BoxDecoration(//border: Border.all(color: Colors.blue, width: 3),
+              decoration: BoxDecoration(
+                //border: Border.all(color: Colors.blue, width: 3),
                 image: DecorationImage(
                   image: AssetImage("assets/images/1111.png"),
                   fit: BoxFit.cover,
-                  colorFilter: new ColorFilter.mode(
-                      Colors.black.withOpacity(0.3), BlendMode.dstATop),
+                  colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.3), BlendMode.dstATop),
                 ),
               ),
               child: Align(
@@ -63,8 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 image: new DecorationImage(
                   image: new AssetImage("assets/images/2222.jpg"),
                   fit: BoxFit.cover,
-                  colorFilter: new ColorFilter.mode(
-                      Colors.white.withOpacity(0.3), BlendMode.dstATop),
+                  colorFilter: new ColorFilter.mode(Colors.white.withOpacity(0.3), BlendMode.dstATop),
                 ),
               ),
               child: Stack(
@@ -82,9 +85,10 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),
                               Padding(
                                 padding: const EdgeInsets.all(35.0),
-                                child: Container(
-                                  child:
-                                      new Image.asset("assets/images/3333.png"),
+                                child: AnimatedRotation(
+                                  turns: _answer ? 360 : 540 / 360,
+                                  duration: Duration(seconds: 1),
+                                  child: Image.asset("assets/images/3333.png"),
                                 ),
                               ),
                               Text(
@@ -105,9 +109,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),
                               padding: const EdgeInsets.all(20),
                               primary: Colors.black,
-                              backgroundColor:
-                                  Colors.transparent),
-                          onPressed: () {},
+                              backgroundColor: Colors.transparent),
+                          onPressed: _incrementCounter,
                           child: Text("GO! >>>", style: appBarTitleStyle),
                         ),
                       ),
