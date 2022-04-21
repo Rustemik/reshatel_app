@@ -1,0 +1,123 @@
+name: reshatel_app
+description: A new Flutter project.
+
+# Следующая строка предотвращает случайную публикацию пакета на
+# pub.dev, использующий `flutter pub publish`. Это предпочтительнее для частных пакетов.
+publish_to: 'none' # Удалите эту строку, если хотите опубликовать на pub.dev
+
+# Следующее определяет версию и номер сборки для вашего приложения.
+# Номер версии состоит из трех чисел, разделенных точками, например 1.2.43.
+#, за которым следует необязательный номер сборки, разделенный +.
+# И версия, и номер сборки могут быть переопределены во флаттере.
+# построить, указав --build-name и --build-number соответственно.
+# В Android имя сборки используется как имя версии, а номер сборки используется как код версии.
+# Узнайте больше об управлении версиями Android на странице https://developer.android.com/studio/publish/versioning.
+# В iOS имя сборки используется как CFBundleShortVersionString, а номер сборки используется как CFBundleVersion.
+# Подробнее об управлении версиями iOS см.
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.16.1 <3.0.0"
+
+# Зависимости указывают другие пакеты, которые нужны вашему пакету для работы.
+# Для автоматического обновления зависимостей вашего пакета до последних версий
+# рассмотрите возможность запуска `flutter pub upgrade --major-versions`. Альтернативно,
+# зависимости можно обновить вручную, изменив номера версий ниже на
+# последняя версия доступна на pub.dev. Чтобы увидеть, какие зависимости имеют более новые
+# Доступны версии, запустите `flutter pub old`.
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_svg: ^1.0.3
+
+
+  # Следующее добавляет в ваше приложение шрифт Cupertino Icons.
+  # Используйте с классом CupertinoIcons для иконок в стиле iOS.
+  cupertino_icons: ^1.0.2
+  rive:
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+   # Пакет "flutter_lints" ниже содержит набор рекомендуемых линтов для
+   # поощрять использование хороших методов кодирования. Набор ворса, предоставляемый пакетом,
+   # активируется в файле `analysis_options.yaml`, расположенном в корне вашего
+   # упаковка. См. этот файл для получения информации об отключении определенного ворса.
+   # правила и активация дополнительных.
+  flutter_lints: ^1.0.0
+
+# Информацию об общей для Dart части этого файла см.
+# следующая страница: https://dart.dev/tools/pub/pubspec
+
+# Следующий раздел относится к Flutter.
+flutter:
+  assets:
+    - res/
+    - assets/1021-1989-time-icon-demo.riv
+    - assets/images/fon-iz-znakov-voprosa.jpg
+    - assets/images/1111.png
+    - assets/images/3333.png
+    - assets/images/2222.jpg
+  fonts:
+    - family: Roboto
+      fonts:
+       - asset: res/fonts/Roboto-Black.ttf
+       - asset: res/fonts/Roboto-BlackItalic.ttf
+       - asset: res/fonts/Roboto-Bold.ttf
+       - asset: res/fonts/Roboto-BoldItalic.ttf
+       - asset: res/fonts/Roboto-Italic.ttf
+       - asset: res/fonts/Roboto-Light.ttf
+       - asset: res/fonts/Roboto-LightItalic.ttf
+       - asset: res/fonts/Roboto-Medium.ttf
+       - asset: res/fonts/Roboto-MediumItalic.ttf
+       - asset: res/fonts/Roboto-Regular.ttf
+       - asset: res/fonts/Roboto-Thin.ttf
+       - asset: res/fonts/Roboto-ThinItalic.ttf
+    - family: Pacifico
+      fonts:
+       - asset: res/fonts/Pacifico-Regular.ttf
+    - family: Caveat
+      fonts:
+       - asset: res/fonts/Caveat-SemiBold.ttf
+       - asset: res/fonts/Caveat-Bold.ttf
+       - asset: res/fonts/Caveat-Medium.ttf
+       - asset: res/fonts/Caveat-SemiBold.ttf
+
+   # Следующая строка гарантирует, что шрифт Material Icons
+   # включены в ваше приложение, так что вы можете использовать значки в
+   # материальный класс Icons.
+  uses-material-design: true
+assets:
+- assets/1021-1989-time-icon-demo.riv
+  # Чтобы добавить ресурсы в ваше приложение, добавьте раздел ресурсов, например:
+  # ресурсы:
+  # - изображения/a_dot_burr.jpeg
+  # - изображения/a_dot_ham.jpeg
+
+  # Ресурс изображения может относиться к одному или нескольким «вариантам» разрешения, см.
+  # https://flutter.dev/assets-and-images/#разрешающая способность.
+
+  # Подробнее о добавлении ресурсов из зависимостей пакетов см.
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # Чтобы добавить пользовательские шрифты в ваше приложение, добавьте здесь раздел шрифтов,
+  # в этом разделе "трепетание". Каждая запись в этом списке должна иметь
+  # ключ "family" с названием семейства шрифтов и ключ "fonts" с
+  # список, содержащий ресурс и другие дескрипторы для шрифта. За
+  # пример:
+  # шрифты:
+  # - семья: Шайлер
+  # шрифты:
+  # - актив: шрифты/Schyler-Regular.ttf
+  # - актив: шрифты/Schyler-Italic.ttf
+  # стиль: курсив
+  # - семейство: Траян Про
+  # шрифты:
+  # - актив: шрифты/TrajanPro.ttf
+  # - актив: шрифты/TrajanPro_Bold.ttf
+  # вес: 700
+  #
+  # Подробную информацию о шрифтах из зависимостей пакетов см.
+  # см. https://flutter.dev/custom-fonts/#from-packages
